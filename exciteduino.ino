@@ -87,10 +87,54 @@ void loop()
   u8g.firstPage();  
   do {
     draw();
-    delay(2000);
+    delay(8000);
   } while( u8g.nextPage() );
   
   // rebuild the picture after some delay
   
   
 }
+
+/*
+//uno code
+String inputString = "";         // a string to hold incoming data
+boolean stringComplete = false;  // whether the string is complete
+
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(13,OUTPUT);
+}
+
+void loop() 
+{ 
+  digitalWrite(13,HIGH);
+  delay(1000);
+  digitalWrite(13,LOW);
+  delay(1000);
+}
+
+void serialEvent() {
+  while (Serial.available()) {
+    // get the new byte:
+    char inChar = (char)Serial.read();
+    // add it to the inputString:
+    inputString += inChar;
+    // if the incoming character is a newline, set a flag
+    // so the main loop can do something about it:
+    if (inChar == '\n') 
+    {
+      stringComplete = true;
+    }
+    
+    if (stringComplete) 
+    {
+      Serial.println(inputString);
+      // clear the string:
+      inputString = "";
+      stringComplete = false;
+    }
+  }
+}
+*/
+
