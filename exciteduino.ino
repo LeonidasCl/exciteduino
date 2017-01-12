@@ -77,7 +77,8 @@ void draw(void) {
 
 void setup()
 {
-
+  Serial.begin(9600);
+  Serial.println("start");
 }
 
 void loop()
@@ -87,11 +88,11 @@ void loop()
   u8g.firstPage();  
   do {
     draw();
-    delay(8000);
+    Serial.println("excited");
   } while( u8g.nextPage() );
   
   // rebuild the picture after some delay
-  
+  delay(2000);
   
 }
 
